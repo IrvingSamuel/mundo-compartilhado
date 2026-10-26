@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mundo Compartilhado</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+  <style>
+    body { margin: 0; overflow: hidden; background: #8fd3ff; font-family: 'VT323', monospace; }
+    .painel {
+      position: fixed; background: #f4d58d; color: #4a2c12; border: 4px solid #8a5a2b; border-radius: 6px;
+      box-shadow: inset 0 0 0 2px #c98d4a, 0 4px 0 #5a3a1a; padding: 8px 14px; font-size: 22px; line-height: 1.15;
+    }
+    #relogio { top: 12px; right: 12px; text-align: center; min-width: 120px; }
+    #dia { font-size: 26px; }
+    #status { top: 12px; left: 12px; max-width: min(380px, calc(100vw - 180px)); }
+    #status b { font-weight: normal; font-size: 26px; }
+    #tarefa { color: #2e5e1e; }
+    #ajuda { bottom: 12px; left: 12px; font-size: 19px; }
+    #seguir { color: #8a2b1a; }
+  </style>
+  <script type="importmap">
+    { "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+    } }
+  </script>
+</head>
+<body>
+  <div id="relogio" class="painel"><div id="dia">Dia 1</div><div id="hora">☀️ 06:00</div></div>
+  <div id="status" class="painel">
+    <b>🧑‍🌾 Fazendeiro</b>
+    <div id="tarefa"></div>
+    <div id="contadores"></div>
+    <div id="visitantes"></div>
+  </div>
+  <div id="ajuda" class="painel">[C] seguir o fazendeiro · [Espaço] acelerar o tempo · arraste para girar <div id="seguir"></div></div>
+  <script type="module" src="main.js"></script>
+</body>
+</html>
